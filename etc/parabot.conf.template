@@ -1,2 +1,8 @@
 [telegram]
 token=ENTER_TELEGRAM_TOKEN_HERE
+[bot]
+admin_key=ENTER_ADMIN_TOKEN_HERE
+timezone=Europe/Zurich
+paraglidable=0
+[paraglidable]
+token=ENTER_PARAGLIDABLE_TOKEN_HERE
