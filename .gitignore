@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Custom files
-etc/config.json
+etc/parabot.conf
