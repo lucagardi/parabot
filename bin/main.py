@@ -2,14 +2,14 @@
 import json
 import logging
 import argparse
-import ConfigParser
+import configparser
 from telegram.ext import Updater
 
 class Parabot(object):
     CONFIG_PATH = '../etc/parabot.conf'
-    def construct_config(self):
+    def init_config(self):
         self.logger.debug('Reading config')
-        config = ConfigParser.ConfigParser()
+        config = configparser.ConfigParser()
         config.read(self.CONFIG_PATH)
 
         self.config = config
@@ -17,7 +17,7 @@ class Parabot(object):
     def init_logging(self, debug):
         # Init logging
         log          = logging.getLogger(__name__)
-        telegram_log = logging.getLogger('telegram.ext.dispatcher')
+        telegram_log = logging.getLogger('telegram')
 
         # Add console handler
         console_handler = logging.StreamHandler()
@@ -33,7 +33,10 @@ class Parabot(object):
         log.setLevel(logging.DEBUG if args.debug else logging.INFO)
         telegram_log.setLevel(logging.DEBUG if args.debug else logging.INFO)
 
-        self.log = log
+        self.logger = log
+
+    def init_handlers(self):
+        pass
 
     def __init__(self, debug=False):
         self.init_logging(debug=debug)
