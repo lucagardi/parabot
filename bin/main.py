@@ -8,8 +8,10 @@ from bot import Bot
 
 if __name__ == '__main__':
     # Handle CLI arguments
-    cli_args = argparse.ArgumentParser('Paragliding rides/carsharing integration')
-    cli_args.add_argument('-d', '--debug', action='store_true', help='Show debug information')
+    cli_args = argparse.ArgumentParser('Paragliding Telegram bot')
+    cli_args.add_argument('-d', '--debug',
+                          action='store_true',
+                          help='Show debug information')
     args = cli_args.parse_args()
 
     # Start bot, resistence is futile
