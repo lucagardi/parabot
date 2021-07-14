@@ -11,26 +11,14 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 from handlers.paraglidable import ParaglidableHandler
 
 class Bot(object):
+    """ Telegram bot smart class, handles actions, configs and more complex logics. """
     CONFIG_PATH = '../etc/parabot.conf'
     DB_PATH = '../var/parabot.db'
-
-    @classmethod
-    def get_config(cls):
-        return 
-
-    def say_hello(self, instance, update):
-        print(instance)
-        print(update)
-
 
     def action_router(self, update, context):
         """
         Main action router, handler for Telegram messages.
-        Should be used to provide the correct actions decisions
-        and trigger a reply
-        :param update: Update to be handled
-        :param context: CallbackContext
-        :return: None
+        Should be used to trigger actions from raw messages in chats and groups.
         """
 
         # Avoids flooding chats with replies for old messages
